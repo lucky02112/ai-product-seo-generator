@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product SEO Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
+<body>
+
+<div class="container">
+
+    <h1>AI Product SEO Generator</h1>
+
+    <form action="/generate" method="POST">
+
+        <label>Product Name</label>
+        <input type="text" name="product" placeholder="Travel Duffle Bag" required>
+
+        <label>Brand</label>
+        <input type="text" name="brand" placeholder="Nexxtar">
+
+        <label>Material</label>
+        <input type="text" name="material" placeholder="Polyester">
+
+        <label>Color</label>
+        <input type="text" name="color" placeholder="Black">
+
+        <label>Category</label>
+        <input type="text" name="category" placeholder="Travel Bag">
+
+        <button type="submit">
+            Generate SEO Content
+        </button>
+
+    </form>
+
+    {% if title %}
+
+    <div class="result">
+
+        <h2>SEO Title</h2>
+
+        <textarea rows="3">{{ title }}</textarea>
+
+        <h2>Description</h2>
+
+        <textarea rows="6">{{ description }}</textarea>
+
+        <h2>Keywords</h2>
+
+        <textarea rows="3">{{ keywords }}</textarea>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
